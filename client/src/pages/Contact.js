@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import superagent from "superagent";
 import Modal from "react-modal";
 
 const customStyles = {
@@ -65,20 +64,12 @@ class Contact extends Component {
         message: this.state.message
       };
       console.log(payload);
-      axios.post("/api/send", { payload })
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err))
-      };
-
-      // axios({
-      //   method: "POST",
-      //   url: "/api/send",
-      //   data: {
-      //     payload
-      //   }
-      // });
+      axios
+        .post("/api/send", { payload })
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err));
     }
-  
+  };
 
   closeModal() {
     this.setState({ modalIsOpen: false });
@@ -153,7 +144,6 @@ class Contact extends Component {
           contentLabel="Example Modal"
         >
           <h2 ref={subtitle => (this.subtitle = subtitle)}>Message Sent!</h2>
-          {/* <form> */}
           Thank you!! Pat will be back to you shortly.
           <br />
           <br />
@@ -163,7 +153,6 @@ class Contact extends Component {
             </button>
             <hr />
           </div>
-          {/* </form> */}
         </Modal>
       </div>
     );
