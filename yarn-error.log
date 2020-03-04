@@ -1,0 +1,67 @@
+Arguments: 
+  /usr/local/lib/node_modules/node/bin/node /usr/local/bin/yarn start
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/patrickcorcoran/Library/Python/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/mysql/bin
+
+Yarn version: 
+  1.10.1
+
+Node version: 
+  12.8.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/patrickcorcoran/Desktop/codingProjects/portfolioSite/package.json: Unexpected token / in JSON at position 128
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1136:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:98:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:109:13
+
+npm manifest: 
+  {
+    "name": "portfoliosite",
+    "version": "1.0.0",
+    "description": "Portfolio Site for Pat Corcoran",
+    "main": "server.js",
+    // "proxy": "http://localhost:3001",
+    "scripts": {
+      "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+      "start:prod": "node server.js",
+      "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+      "client": "cd client && npm run start",
+      "install": "cd client && npm install",
+      "build": "cd client && npm run build",
+      "heroku-postbuild": "npm run build"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/patrickcorcoran10/portfolioSite.git"
+    },
+    "author": "pc",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/patrickcorcoran10/portfolioSite/issues"
+    },
+    "homepage": "https://github.com/patrickcorcoran10/portfolioSite#readme",
+    "dependencies": {
+      "@sendgrid/mail": "^6.5.3",
+      "body-parser": "^1.19.0",
+      "concurrently": "^5.1.0",
+      "cors": "^2.8.5",
+      "dotenv": "^8.2.0",
+      "express": "^4.17.1",
+      "express-session": "^1.17.0",
+      "nodemailer": "^6.4.4",
+      "path": "^0.12.7"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
