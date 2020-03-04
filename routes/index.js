@@ -21,9 +21,7 @@ router.post("/api/send", (req, res, next) => {
   };
   sgMail
     .send(msg)
-    .then(() => {
-      console.log("Hooray!");
-    })
+    .then(() => {})
     .catch(error => {
       //Log friendly error
       console.error(error.toString());
